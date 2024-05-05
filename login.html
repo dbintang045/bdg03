@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('backgroundlogin.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #b4b8bd;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #274eb8;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #647fc9;
+        }
+        .running-text {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 28px;
+            color: #fff;
+            white-space: nowrap;
+            animation: running-text-animation 15s linear infinite;
+        }
+        @keyframes running-text-animation {
+            0% { left: 100%; }
+            100% { left: -100%; }
+        }
+        /* Gaya untuk label username dan password */
+        label {
+            color: #b4b8bd; /* Warna biru yang menarik */
+            font-weight: bold; /* Teks menjadi tebal */
+            font-size: 18px; /* Ukuran teks */
+        }
+    </style>
+</head>
+<body>
+    <div class="running-text">Selamat Datang Di Aplikasi DBG 03</div>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form action="menu.html" method="post" id="loginForm">
+            <!-- Gaya untuk label username dan password -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "keu" && password === "a12") {
+                window.location.href = "";
+            } else if (username === "personalia" && password === "b34") {
+                window.location.href = "menuPersonalia.html";
+            } else if (username === "adm" && password === "c56") {
+                window.location.href = "";
+            } else if (username === "kasir" && password === "d78") {
+                window.location.href = "";
+            } else if (username === "input" && password === "e99") {
+                window.location.href = "";
+            } else if (username === "administrator" && password === "x111") {
+                window.location.href = "";    
+            } else {
+                alert("Username atau password salah. Silakan coba lagi.");
+            }
+        });
+    </script>
+</body>
+</html>
